@@ -577,6 +577,32 @@ body {
 
 .error-actions { margin-top: 1.4rem; display: flex; justify-content: center; }
 
+/* ── Hamburger ── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #e7f4ff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ── Responsive ── */
 @media (max-width: 1100px) {
     .film-header { grid-template-columns: minmax(0, 310px) minmax(0, 1fr); }
@@ -598,9 +624,43 @@ body {
 }
 
 @media (max-width: 540px) {
-    .nav-links a { display: none; }
-    .logout-btn { padding-inline: 1.2rem; }
-    .film-title { font-size: 2.1rem; }
-    .film-header { padding-inline: 1.3rem; }
-    .film-content { padding-inline: 1.3rem; }
+    .hamburger { display: flex; }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 58px;
+        left: 0;
+        right: 0;
+        background: rgba(3, 7, 16, 0.98);
+        flex-direction: column;
+        padding: 0.5rem 1.5rem 1.5rem;
+        gap: 0;
+        border-bottom: 1px solid rgba(0, 180, 255, 0.3);
+        z-index: 999;
+        backdrop-filter: blur(22px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links a {
+        display: block;
+        padding: 0.9rem 0;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .logout-btn {
+        width: 100%;
+        margin-top: 0.8rem;
+        padding: 0.9rem 1.6rem;
+        text-align: center;
+    }
+
+    .film-title { font-size: 1.9rem; }
+    .film-header { padding-inline: 1.1rem; }
+    .film-content { padding-inline: 1.1rem; }
+    .film-poster { height: 300px; }
+    .film-synopsis { padding: 1rem 1.1rem; font-size: 0.92rem; }
 }

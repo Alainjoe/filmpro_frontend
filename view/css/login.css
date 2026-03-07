@@ -22,7 +22,8 @@ body {
     justify-content: center;
     align-items: center;
     color: var(--text-light);
-    overflow: hidden;
+    overflow-x: hidden;
+    padding: 1rem;
 }
 
 /* ── Effets lumineux ── */

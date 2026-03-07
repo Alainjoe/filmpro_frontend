@@ -14,11 +14,12 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: radial-gradient(circle at top, #003047, #000);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    padding: 1rem;
 }
 
 /* ── Effets lumineux ── */
