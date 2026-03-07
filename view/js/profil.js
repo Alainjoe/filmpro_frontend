@@ -59,7 +59,7 @@ function displayProfile(user) {
                         <p>${escapeHTML(user.email)}</p>
                         <div class="profile-meta">Membre depuis <strong>${escapeHTML(membershipDate)}</strong></div>
                         <div class="profile-badges">
-                            <span class="badge badge-premium">NetFilm Premium</span>
+                            <span class="badge badge-premium">FilmPro Premium</span>
                             <span class="badge badge-member">Compte actif</span>
                         </div>
                     </div>
