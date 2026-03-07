@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmPro - Films et Séries</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/catalogue.css">
+</head>
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="../html/catalogue.html" class="logo">FilmPro</a>
+        <div class="nav-links">
+            <a href="../html/catalogue.html" class="active">Accueil</a>
+            <a href="../html/mesfilms.html">Ma Bibliothèque</a>
+            <a href="../html/profil.html">Mon Compte</a>
+            <button class="logout-btn" id="logout-btn">Déconnexion</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-pill">
+                <span class="dot"></span> Votre univers cinéma & séries
+            </div>
+            <h1 class="hero-title">
+                Découvrez l'univers <span class="hero-highlight">FilmPro</span>
+            </h1>
+            <p class="hero-subtitle">
+                Des milliers de films, séries et nouveautés à portée de clic. Explorez, louez et gérez facilement votre bibliothèque personnelle.
+            </p>
+            <div class="hero-actions">
+                <a href="#films" class="btn btn-primary">
+                    <span class="icon">▶</span> Explorer les films
+                </a>
+                <a href="mesfilms.html" class="btn btn-secondary">
+                    <span class="icon">🎬</span> Mes locations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="user-info" id="user-info">
+            <div class="user-info-header">
+                <h3><span class="user-dot"></span> MON PROFIL</h3>
+                <span class="user-badge">Membre FilmPro</span>
+            </div>
+            <div id="user-details">
+                <div class="loading">Chargement de vos informations...</div>
+            </div>
+        </div>
+
+        <section class="search-section">
+            <h3>Rechercher un film ou une série</h3>
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label for="search-title">Titre</label>
+                    <input type="text" id="search-title" placeholder="Ex : Inception, The Dark Knight...">
+                </div>
+                <div class="filter-group">
+                    <label for="search-name">Réalisateur ou acteur</label>
+                    <input type="text" id="search-name" placeholder="Ex : Christopher Nolan, Leonardo DiCaprio...">
+                </div>
+                <div class="filter-group">
+                    <label for="search-genre">Genre</label>
+                    <select id="search-genre">
+                        <option value="">Tous les genres</option>
+                        <option value="Action">Action</option>
+                        <option value="Aventure">Aventure</option>
+                        <option value="Drame">Drame</option>
+                        <option value="Comédie">Comédie</option>
+                        <option value="Science-Fiction">Science-Fiction</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search-actions">
+                <button type="button" class="btn-clear" onclick="clearSearch()">Effacer</button>
+                <button type="button" class="btn-search" onclick="searchFilms()">Rechercher</button>
+            </div>
+        </section>
+
+        <div id="search-results-info"></div>
+
+        <section class="films-section" id="films">
+            <h2 class="section-title"><span class="dot"></span> Notre catalogue</h2>
+            <div class="films-grid" id="films-container"></div>
+        </section>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/catalogue.js"></script>
+</body>
+</html>
